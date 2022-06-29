@@ -24,7 +24,8 @@ Try{
     $O365Endpoints=$web_client.DownloadString($MicrosoftJSONURL) | ConvertFrom-Json
 
     Write-Host "URLs and IPs Loaded !" -ForegroundColor Green
-    Write-Host "We found $($O365Endpoints.count) endpoints !"
+    Write-Host "We found $($O365Endpoints.count) endpoint IDs !"
+    Write-Host "In total for both URLs and IPs we have $(($O365Endpoints | Select -ExpandProperty URLs -ErrorAction SilentlyContinue).count + ($O365Endpoints | Select -ExpandProperty IPs -ErrorAction SilentlyContinue).count) Endpoints !" -ForegroundColor Yellow
     Write-host "to search the endpoints, use the `$O365Endpoints variable"
     }
 
