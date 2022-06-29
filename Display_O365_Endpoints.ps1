@@ -85,6 +85,5 @@ Foreach ($endpoint in $O365Endpoints) {
 #endregion
 
 Write-Host "Number of IPs and URLs on expanded object: $($MyCollection.count)" -ForegroundColor Green
-Write-Host "Type $MyCollection | ft IP, TCPPorts,UDPPorts, ServiceAreaDisplayName for example to see the object:"
 
 $MyCollection | Select IP,URL, TCPPorts,UDPPorts, ServiceAreaDisplayName, required,notes | out-Gridview 
